@@ -23,10 +23,10 @@ pipeline {
         stage('Start app with PM2') {
             steps {
                 sh '''
-                npm install -g pm2
-                pm2 delete all || true
-                pm2 start server.js --name backend
-                pm2 save
+                sudo npm install -g pm2
+                sudo pm2 delete all || true
+                sudo pm2 start server.js --name backend
+                sudo pm2 save
                 '''
             }
         }
